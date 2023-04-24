@@ -78,6 +78,7 @@ useEffect(() => {
                 }
                 id
                 title
+                htmlTag
               }}`
           },
           headers: {

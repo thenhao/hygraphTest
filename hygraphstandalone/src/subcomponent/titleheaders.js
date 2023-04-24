@@ -22,22 +22,22 @@ function TitleHeaders({titles}){
 
     console.log(titles);
 
-    // Read the number of titles to produce
+    //Read the number of titles to produce
     //each containing its own cards
     //button to toggle cards
     //put button inside of the div
     //write function to toggle show and set title to know which title it is at
-
-    //next:
+    //update api to include text for html
     //use html tags as text to display cards
+    //setting the div as dangerous html
+    //next:use card to show dev work ?
 
-    //{((titleValue==title)&&(buttonState))
     return (
         <div>
-            {titles.map(({id, title, image})=>(
+            {titles.map(({id, title, image, htmlTag})=>(
                 <div>
                     <div key={id}>{title} <button onClick={()=>toggle(title)}>{((titleValue==title)&&(buttonState)) ? '-' : '+'}</button></div>
-                    {((titleValue==title)&&(buttonState)) ? <Card cards={image}/> : '' }
+                    {((titleValue==title)&&(buttonState)) ? <Card cards={image} tag={htmlTag}/> : '' }
                 </div>
             ))}
         </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import Card from 'react-bootstrap/Card'
 
-function Card({ cards, tag }) {
+function DisplayCard({ cards, tag }) {
 
 const [count, setCount] = useState(0);
 console.log(cards);
@@ -8,8 +9,8 @@ console.log(cards);
     {cards.map(({ id,url, index}) => (
                 <img key={id} src={url} width={250} height={250} alt =""/>
               ))}
-              <div dangerouslySetInnerHTML={{__html: tag}}></div>
+              <Card dangerouslySetInnerHTML={{__html: tag}}></Card>
     </div>);
 }
 
-export default Card;
+export default DisplayCard;

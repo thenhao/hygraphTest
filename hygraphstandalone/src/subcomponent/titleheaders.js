@@ -1,5 +1,5 @@
 import React,  { useState } from 'react';
-import Card from './card';
+import DisplayCard from './card';
 
 function TitleHeaders({titles}){
 
@@ -31,13 +31,15 @@ function TitleHeaders({titles}){
     //use html tags as text to display cards
     //setting the div as dangerous html
     //next:use card to show dev work ?
+    // currently it cannot detect the card from the package
+    // dangerous inner html only takes in basic tags for now
 
     return (
         <div>
             {titles.map(({id, title, image, htmlTag})=>(
                 <div>
                     <div key={id}>{title} <button onClick={()=>toggle(title)}>{((titleValue==title)&&(buttonState)) ? '-' : '+'}</button></div>
-                    {((titleValue==title)&&(buttonState)) ? <Card cards={image} tag={htmlTag}/> : '' }
+                    {((titleValue==title)&&(buttonState)) ? <DisplayCard cards={image} tag={htmlTag}/> : '' }
                 </div>
             ))}
         </div>
